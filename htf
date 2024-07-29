@@ -1,0 +1,13 @@
+
+console.log(/service/i.test(facility));
+const arr1 = ["free wifi", "gym", "pool", "free-internet", "room-internet", "parking","room service"];
+const arr2 = [["internet", "wifi"], ["wifi"], ["tg"]];
+
+const allElementsPresent = arr2.every(subArray => 
+  subArray.some(item => arr1.some(oA => {
+    let regex = new RegExp(item, 'i');
+    console.log(regex.test(oA),oA,regex)
+    return regex.test(oA);
+  }))
+);
+console.log(allElementsPresent,"allElementsPresent"); // Output: false
